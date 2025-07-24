@@ -1,0 +1,31 @@
+table tr:nth-child(even) {
+background-color : #d9d9e0 ;
+} 
+
+.report {
+	margin-left: 38px;
+    margin-right: 38px;
+}
+
+.table-responsive > .table > tbody > tr > td {
+	white-space: normal;
+}
+
+
+.hidden-cell {
+	visibility: hidden !important;
+	border: 2px solid #f4f4f6 !important;
+  }
+
+
+td.kg-checkbox {
+  content: "";
+  background-image: url('../img/uncheck.png');
+  background-size: 25px 22px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+td.kg-checkbox.checked {
+  background-image: url('../img/check.png');
+}

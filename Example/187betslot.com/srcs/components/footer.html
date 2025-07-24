@@ -1,0 +1,98 @@
+ <!DOCTYPE html>
+  <html><head>
+  <meta charset="UTF-8"/>
+  <style>
+  
+    @font-face {
+	font-family: 'Inter';
+	src: url('../css/inter.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Grifter';
+	font-weight: bold;
+	src: url('../css/grifterbold.otf') format('opentype');
+}
+  
+  
+  * {
+	color: #1C1C1C;
+	font-family: 'Inter';
+  }
+  
+  img.full {
+	width: 100%;
+  }
+  
+  
+  table {
+	//border-top: 1px solid #c4c4c4; 
+	width: 100%;
+  }
+  
+  table td {
+	text-align:center;
+	font-size: 14px; 
+	width: 33%;
+  }
+  
+  .speed-bump {
+	display: block;
+	height: 10px;
+  }
+  
+  .speed-bump.tw {
+	height: 53px;
+  }
+  
+  .lg-line {
+	background: url(../img/footer.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+	width: 77%;
+	vertical-align: bottom;
+	text-align: left;
+  }
+  </style>
+  <script>
+  //#d9d9d9
+  function subst() {
+      var vars = {};
+      var query_strings_from_url = document.location.search.substring(1).split('&');
+      for (var query_string in query_strings_from_url) {
+          if (query_strings_from_url.hasOwnProperty(query_string)) {
+              var temp_var = query_strings_from_url[query_string].split('=', 2);
+              vars[temp_var[0]] = decodeURI(temp_var[1]);
+          }
+      }
+      var css_selector_classes = ['page', 'frompage', 'topage', 'webpage', 'section', 'subsection', 'date', 'isodate', 'time', 'title', 'doctitle', 'sitepage', 'sitepages'];
+      for (var css_class in css_selector_classes) {
+          if (css_selector_classes.hasOwnProperty(css_class)) {
+              var element = document.getElementsByClassName(css_selector_classes[css_class]);
+              for (var j = 0; j < element.length; ++j) {
+                  element[j].textContent = vars[css_selector_classes[css_class]];
+              }
+          }
+      }
+  }
+  </script></head><body style="border:0; margin: 0; margin-left: 53px; margin-right: 53px; background: #f4f4f6;" onload="subst()">
+  <p class="speed-bump"></p>
+  <table>
+    <tr>
+      <td style="width: 6%; ">
+       <!-- <img src="../img/eh-badge-b.png" class="kg-badge full" /> -->
+      </td>
+	   <td class="lg-line">
+		<span style="margin-bottom: 4px; display: inline-block;">BP - Reporte de Dominio V.1.0</span>
+      </td>
+	   <td  style="width: 15%; font-size: 10px;">
+	   - CONFIDENCIAL -</br>
+        Pag <span class="page"></span> de  <span class="topage"></span>
+      </td>
+    </tr>
+  </table>
+  <p class="speed-bump tw"></p>
+  </body></html>
+

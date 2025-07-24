@@ -1,0 +1,3175 @@
+<!DOCTYPE html>
+<!-- saved from url=(0016)https://time.is/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es"><head>
+  
+  <style>
+    #syncH, #syncDtl {
+      display: none !important;
+    }
+  
+   
+    </style>
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Time.is 18:43</title>
+<link rel="preconnect" href="https://a.pub.network/" crossorigin=""><link rel="preconnect" href="https://b.pub.network/" crossorigin=""><link rel="preconnect" href="https://c.pub.network/" crossorigin=""><link rel="preconnect" href="https://d.pub.network/" crossorigin=""><link rel="preconnect" href="https://c.amazon-adsystem.com/" crossorigin=""><link rel="preconnect" href="https://s.amazon-adsystem.com/" crossorigin=""><link rel="preconnect" href="https://btloader.com/" crossorigin=""><link rel="preconnect" href="https://api.btloader.com/" crossorigin=""><link rel="preconnect" href="https://confiant-integrations.global.ssl.fastly.net/" crossorigin=""><script src="./srcs/assets/time/quant.js.download" async="" type="text/javascript"></script><script async="" src="./srcs/assets/time/pubfig.min.js.download"></script><script data-cfasync="false">
+AdP='FS';var freestar=freestar||{};freestar.hitTime=Date.now();freestar.queue=freestar.queue||[];freestar.config=freestar.config||{};freestar.debug=window.location.search.indexOf("fsdebug")===-1?false:true;freestar.config.enabled_slots=[];!function(a,b){var c=b.getElementsByTagName("script")[0],d=b.createElement("script"),e="https://a.pub.network/timeis";e+=freestar.debug?"/qa/pubfig.min.js":"/pubfig.min.js",d.async=!0,d.src=e,c.parentNode.insertBefore(d,c)}(window,document);freestar.initCallback=function(){(freestar.config.enabled_slots.length===0)?freestar.initCallbackCalled=false:freestar.newAdSlots(freestar.config.enabled_slots)}
+</script><script>
+var updint=1000,U="undefined",N=null,E=true,F=!E,O="object",S="string",D=document,A=0,fc={a:0},bfc=1,uT="Time.is ",sT,tD,pY=lY=242,cY=syncn=rsy=0,ztrans=0,newzo=0,ss={"1105":"&uarr; 05:40 &darr; 17:33 (11h 53m)","1106":"&uarr; 05:40 &darr; 17:32 (11h 53m)"},destT=0,yrp="",csup=1,czo=0,rqT=0,syncT=0,syncquota=10,earliest_syncT=0,xR=1,syncm='',syncdt='',adH=110,mZ=64,ltr=1,ticks=0
+function _tD(M){sT=M;tD=new Date().getTime()-M-Math.round(lY/2);cY=lY-pY;if(cY<10)cY=10}
+_tD(1730848904393)
+function gob(e){if(typeof e==O)return e;if(D.getElementById)return D.getElementById(e);return eval(e)}
+function bluritem(e){e=gob(e);e.className=e.className.replace('focused','blr');bfc=1}
+function focusitem(e){bfc=0;e=gob(e);e.className=e.className.replace('blr','focused');e.className=e.className.replace('submitted','focused')}
+function mouseover(e){e.className=e.className.replace('mout','hovered')}
+function mouseout(e){e.className=e.className.replace('hovered','mout')}
+function setfocus(g){if(typeof fc[g]==U)fc[g]=1;else fc[g]++
+if(fc['a']!=0&&fc['a']!=g)losefocus(fc['a'])
+fc['a']=g;gob(g).className=gob(g).className.replace('hide','show');bfc=0}
+function losefocus(g){if(fc['a']!=g)fc[g]=0;else{fc[g]--;if(fc[g]<1){fc['a']=0;fc[g]=0;gob(g).className=gob(g).className.replace('show','hide');bfc=1}}}
+function changeclass(i,x,y){var o=gob(i);if(o)o.className=(o.className.replace(x,'')+' '+y).replace(/  +/,' ')}
+
+dmode=0
+function setcookie(n,v){var x=new Date();x.setDate(x.getDate()+365);D.cookie=n+'='+encodeURIComponent(v)+'; expires='+x.toGMTString()+'; path=/'
+if(D.cookie.length<1)csup=0}
+function httpSync(){
+nextSyncT=0
+array_name='main'
+xR=N
+gob('syncH').innerHTML=p_syncing;gob('syncDtl').innerHTML='&nbsp;';gob('msgs').className=gob('msgs').className.replace('hdn','vsbl')
+if(window.XMLHttpRequest)xR=new XMLHttpRequest()
+else if(window.ActiveXObject)xR=new ActiveXObject("Microsoft.XMLHTTP")
+if(xR!=N){
+rqT=new Date()
+czo=-rqT.getTimezoneOffset()
+xR.onreadystatechange=s_C
+xR.open('get','/t1/?'+l+'.'+syncn+'.'+lY+'.'+tD+'.'+rsy+'p.'+czo+'.'+locs[array_name][conf['h']][1]+'.'+rqT.getTime()+'.'+sT+'.'+yrp,E)
+xR.send(N)
+yrp=''
+}else xR='N/A'
+}
+var Y=['','']
+function s_C(){
+var o,dots='...',sym=Y[0],syd=Y[1]
+if(xR.readyState==4){
+if(xR.status==200){
+var rpT=new Date(),n=rpT-rqT,r=xR.responseText.split("\n")
+sT=r[1]
+var prevST=syncT
+syncT=new Date()
+syncT.setTime(syncT.getTime()-tD)
+if(syncn===0||rsy||n<lY){if(r[0].length==13)r.unshift('ok');if(r.length<7||r[0]!=='ok'){
+if(r[0].substr(0,6)=='error:')p_failm=r[0].substr(6)
+else gob('msgs').className='w90 pulldowncv nonet'
+hideTO=setTimeout('sync_cleanup(0)',4000)
+}else{p_failm=p_fail
+if(rsy&&(syncT-prevST<60000)){syncquota--
+if(syncquota<0)earliest_syncT=new Date(syncT.getTime()+120000)
+}else if(earliest_syncT==0)syncquota=10
+}
+rsy=0
+lY=n
+_tD(r[1])
+
+Y=T_I.initClock()
+sym=Y[0]
+syd=Y[1]
+}
+nextSyncT=new Date()
+nextSyncT.setTime(nextSyncT.getTime()-tD+3600000)
+if(49<cY&&syncn<1){for(var i=0;i<syncn;i++)dots+='.'
+sym=p_syncing+dots
+syd=''
+syncn++
+httpSync()}
+else{o=gob('front_loc');if(o)o.style.visibility='visible'
+;o=gob('socbuttons');if(o)o.style.visibility='inherit'
+}
+if(syd=='')syd='&nbsp;'
+for(i=5;i<r.length-1;i++)spdays[r[i].substr(0,4)]=r[i].substr(4,r[i].length)
+if(zone_id!=='UTC'){// zone_offset=r[2];zone_id=r[3]
+}
+}else{sym=p_conn_failed
+syd=xR.statusText
+if(syd!='')syd=' ('+syd+')'
+if(!A){if(xR.statusText!="")sym+=syd
+syd='<a href="javascript:T_I.check_again()">'+p_try_again+'</a>'
+nextSyncT=new Date()
+nextSyncT.setTime(nextSyncT.getTime()-tD+360000)
+}
+}
+gob('syncH').innerHTML=sym
+gob('syncDtl').innerHTML=syd
+var ac=gob('accuracy')
+if(ac)ac.innerHTML=syd
+setmsgH(0)
+}}
+function sg(q,sd){
+T_I.set_susdiv(sd);o=gob(sd)
+if((N!==q.match(/^Ubicación \d+ \(opcional\)$/))||q=='Ubicación'||q=='Automático')return ''
+q=q.replace(/ +$/,'').replace(/^ +/, '')
+if(q.length<4)q=q.toLowerCase()
+var n=sd.replace('susdiv','')
+if((typeof complocurls!=U)&&(typeof complocurls[n]!=U)&&(complocurls[n][0]==q))return ''
+if(typeof prevq[sd]!==U&&q==prevq[sd]||q==e_loc){o.className=o.className.replace('hide','show')
+return ''}
+if(q.length<1){o.innerHTML='';chosen_sus[sd]=0;prevq[sd]=q;current_q[sd]=q;return ''}
+prevq[sd]=q
+if(sus[q]){T_I.populate_sus(sd,q,1);return ''}
+var xh=N,xhp=[]
+if(window.XMLHttpRequest)xh=new XMLHttpRequest()
+else if(window.ActiveXObject)xh=new ActiveXObject('Microsoft.XMLHTTP')
+if(xh!=N){rqT=new Date()
+xh.onreadystatechange=function(){if(xh.readyState==4)if(xh.status==200){
+var xr=xh.responseText.split("\n"),st=xr.shift(),q1=xr.shift()
+for(var i in xr){
+if(i==='indexOf')break
+xr[i]=xr[i].split('	')
+}
+sus[q1]=xr
+if(typeof prevsustime[xhp['sd']]==U||prevsustime[xhp['sd']]<xhp['t']){prevsustime[xhp['sd']]=xhp['t'];T_I.populate_sus(xhp['sd'],xhp['q'],1)}}}
+xhp['sd']=sd
+xhp['t']=new Date()
+if(q=='.')q='.a'
+if(q=='..')q='.,'
+xhp['q']=q
+xh.open("get",'/s/'+l+'/'+q.length+'/'+encodeURIComponent(q.replace(/ /g,'_'))+'?'+xhp['t'].getTime(),E)
+xh.send(N)
+}else xh='N/A'
+}
+function arrows(sd,e){var k=e.which||e.keyCode
+if(k==40||k==38)T_I.cycle_sus(sd,k-39)
+else if(k==9||k==13)T_I.take_chosen(sd,k)
+else return E
+return F}
+function togglesimple(x){var g='',c=bod.className
+if(x!==0&&c.indexOf('simplify')!=-1){dmode=0;bod.className=c.replace('simplify','showall');x=1}
+else if(x!==1&&c.indexOf('showall')!=-1){dmode=1;bod.className=c.replace('showall','simplify');x=0;g='none'}else x=''
+if(x!==''){var gp=gob("___plusone_0");if(gp!=N)gp.style.display=g
+setsizes(1);T_I.tick('',0)}}var kacs={f:"js:t_FS()",'.':"js:t_s()",sO:"/customize",sS:"js:tl_a()",sC:"/calendar",sD:"js:setcol((conf['c']*1+1)%2)",sJ:"/clock",sM:"js:toggle_menu(2)",sT:"/compare","-":"/countdown",sU:"/UTC",sZ:"js:change_clock_size()","$":"https://currency.world","?":"/howto"}
+handle_keys=function(ev){if(!bfc)return E
+var i,u,e=ev||event,q,k=e.which||e.keyCode,s=e.shiftKey?'s':''
+if(e.altKey||e.metaKey||e.ctrlKey)return E
+q=String.fromCharCode(k)
+if(q.toUpperCase()!==q.toLowerCase())q=s+q
+if(typeof kacs[q]===S){u=kacs[q]
+if(u.substr(0,3)=="js:")eval(u.substr(3))
+else{if(u.substr(0,4)=="http")open(u,"_blank")
+else location=u}return F}
+
+if(k===47||(96<k&&k<123)||(64<k&&k<91)){toggle_menu(0);t_search(1);if(k===47)return F}
+i=locs.favs.length-k+48;if((48<k&&k<58)&&U!==typeof locs.favs[i]){location='/'+locs.favs[i][4];return F}
+return E}
+handle_arrow_keys=function(ev){
+if(fc["a"]==1)return E
+var e=ev||event,k=e.which||e.keyCode,s=e.shiftKey?'s':''
+if(e.altKey||e.metaKey||e.ctrlKey)return E
+if(k==27){toggle_menu(0);if(!t_search(0)){togglesimple(1);pstart=[];chosendayid=F;goto_this_year()}return F}
+if(k==36){if(window.scrollY!==0)return E;location='/';return F}
+if(bfc&&36<k&&k<41&&typeof kacs[s+k]===S){
+var u=kacs[s+k]
+if(u.substr(0,3)=="js:")eval(u.substr(3))
+else location=u
+return F
+}
+return E
+}
+function toggle_more(){
+var t=gob('top'),cn='less'
+if(t.className=='less')cn='more'
+t.className=cn
+set_mw()
+}
+D.onkeypress=this.handle_keys
+D.onkeydown=this.handle_arrow_keys
+</script>
+<meta name="description" content="7 millones de ubicaciones, 57 lenguajes, sincronizados con la hora del reloj atómico."><meta property="og:image" content="https://time.is/img/shareable/time_is_110011.png"><meta property="og:image" content="https://time.is/img/shareable/time_is_110011_dark.png"><meta property="og:image" content="https://time.is/img/shareable/time_is_with_milliseconds_110742.png"><meta property="og:image" content="https://time.is/img/shareable/time_is_with_milliseconds_110742_dark.png"><meta name="viewport" content="user-scalable=0, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+<link rel="image_src" href="https://time.is/img/shareable/time_is_110011.png"><link rel="icon" type="image/x-icon" href="https://time.is/favicon.ico">
+<link rel="apple-touch-icon" href="https://time.is/img/apple-touch-icon_2021-11-20.png">
+<link rel="search" type="application/opensearchdescription+xml" title="Time.is" href="https://time.is/opensearch.xml">
+<link rel="alternate" type="application/rss+xml" title="Time Zone News from Time.is" href="https://rss.time.is/time_zone_news.rss"><style>
+*{margin:0;padding:0;border:0;outline:0}
+div,h1,h2,h3,label,time{clear:both}
+div,img,form{float:left}
+#clock{float:left}
+body{background:#fff}
+span a,.nw,#clock{white-space:nowrap}
+body,select,input,textarea{font:18px/26px 'Times New Roman',Times,FreeSerif,serif;color:#333;letter-spacing:2px}
+#nav h3{letter-spacing:1px}
+@font-face {
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-display: swap;
+src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'), url(https://fonts.gstatic.com/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_bZF3gnD_g.woff2) format('woff2');
+unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-display: swap;
+src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v14/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2) format('woff2');
+unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 900;
+font-display: swap;
+src: local('Montserrat Black'), local('Montserrat-Black'), url(https://fonts.gstatic.com/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_epG3gfD_u50.woff2) format('woff2');
+unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-display: swap;
+src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v14/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 900;
+font-display: swap;
+src: local('Montserrat Black'), local('Montserrat-Black'), url(https://fonts.gstatic.com/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_epG3gnD_g.woff2) format('woff2');
+unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face{font-family:'TimeTraveler';font-style:normal;font-weight:400;src:url('srcs/assets/time/TimeTravelerPal-Normal-Regular.ttf') format('truetype')}
+.mt #clock{font-family:'TimeTraveler',Arial,sans-serif}
+#clock{font-size:100px;line-height:normal;position:relative;font-weight:bold}
+#clock span{display:inline-block;text-align:center}
+.mon,.caln td div span{display:inline-block;text-align:center;width:12px}
+#clock0_bg{margin:40px 0}
+div.lg a:link,div.lg a:visited{text-transform:uppercase;font-weight:600;font-size:16px;padding:20px 30px;letter-spacing:3px}
+blockquote{font-weight:900}
+#favs li .time span{display:inline-block;text-align:center;width:13px}
+@media only screen and (max-width:639px){.mon{width:10px}}
+@media only screen and (max-width:1024px){#clock0_bg{margin:30px 0}}
+@media only screen and (max-width:768px){#clock0_bg{margin:20px 0}}
+@media only screen and (max-width:400px){div.lg a:link,div.lg a:visited{font-size:14px;padding:15px 20px;letter-spacing:2px}}.divider{color:#ccc}
+.lsp{float:right;color:#333}
+.lsp ul{list-style:none;text-align:right}
+a:link,a:visited{color:#333;text-decoration:none;border-bottom:1px solid #ccc}
+h1,h2,.clockdate,.clockplace{font-size:36px;line-height:40px;font-weight:normal;letter-spacing:1px}
+.w90{margin-left:5%;width:90%}
+#c{padding-bottom:40px}
+#msgdiv{float:left}
+div#msgs h1{margin-right:30px;float:left}
+.lg a:link,.lg a:visited{background:#c35;float:left;display:block;color:#fff;border:0;padding:20px;font:26px/20px Montserrat,Arial,sans-serif;font-weight:900;letter-spacing:2px}
+.lg{z-index:9;position:relative}
+#pl,#popmsg{display:none}
+time{cursor:pointer;direction:ltr}
+
+#top{width:90%;margin:0 5%}
+#clock0_bg{width:100%}
+#clock0,.clockplace,#lC,.clockdate,#daydiv{text-align:right}
+select{height:40px}
+#pL a:link,#pL a:visited,#pL1 a,#lC,#daydiv,#daydiv1{color:#333}
+
+#pL,#pL1{margin-bottom:20px}
+#favs{width:100%;list-style:none;margin:0 0 10px 0;padding:0;float:right}
+#favs span{color:#999}
+.tbx div{clear:none;float:left;text-align:left;white-space:nowrap;font-size:18px;line-height:22px;font-style:normal;font-weight:normal;letter-spacing:2px}
+.tbx a{display:block;margin:0 0 10px 10px;padding:10px 20px;border:1px solid #eee;background:#eee;text-decoration:none}
+.txtin,.dateinput{background:#eee;border:1px solid #ddd;width:138px;padding:10px;color:#333}
+.mout{border-color:#eee}
+</style><link rel="stylesheet" href="./srcs/assets/time/t2024-10-23.css"><script src="./srcs/assets/time/t2024-09-03b.js"></script>
+</head>
+<body id="bdy" class="withA showall mt l                               portrait">
+<div id="popmsg"><div id="popmsgpos"><div id="popmsgbg" onclick="remove_popmsg()">
+<div id="popmsg-close-btn">×</div>
+<div id="popmsgtext"></div>
+</div></div></div>
+<div id="mainwrapper">
+<div id="top">
+<div class="lg"><h2><a href="https://time.is/" target="_top" title="Time.is">Time.is</a></h2></div>
+<div class="icon-nav tr">
+<a href="https://time.is/#nav" onclick="return toggle_menu(1)" title="Menú" id="menubutton">
+<div style="margin-top:2px;width:100%;border-top-width:5px;padding:3px 0 2px 0;border-bottom-width:5px;margin-bottom:5px"></div>
+<div style="width:100%;border-top-width:5px;padding:2px 0;margin-bottom:4px"></div>
+</a>
+</div>
+<script>
+function t_search(x){var qi=gob('q'),w=600
+if(x){
+scrollTo(0,0)
+qi.focus()
+if(ww<915)w=ww*.9-80
+if(qi.value.indexOf('')!=-1)qi.value=qi.value.replace('','');setfocus('susdiv');sg(qi.value,'susdiv');focusitem(qi);if(dmode)bod.className=bod.className.replace('simplify','showall');gob('qbox').className='fcs'
+}else{
+if(gob('qbox').className!=='fcs')return F;
+qi.blur()
+w=0
+if(ww<915)w=0
+if(ww<641||Tstate.current_page=='Unix_time')w=0
+if(qi.value==='')qi.value=''
+losefocus('susdiv')
+bluritem(qi)
+if(dmode)bod.className=bod.className.replace('showall','simplify')
+setTimeout("gob('qbox').className=''",200)
+}
+return E}
+</script>
+<form id="qbox" class="tr" action="https://time.is/" method="get" autocomplete="off" accept-charset="UTF-8" onsubmit="return T_I.submit(gob(&#39;q&#39;).value)">
+<input type="text" id="q" name="q" value="" tabindex="1" maxlength="100" accesskey="3" class="txtin blr mout" onfocus="t_search(1)" onblur="t_search(0)" onmouseover="mouseover(this)" onmouseout="mouseout(this)" onkeydown="arrows(&#39;susdiv&#39;,event)" onkeyup="sg(this.value,&#39;susdiv&#39;)">
+<div id="susdiv" class="susdiv" onmouseover="setfocus(&#39;susdiv&#39;)" onmouseout="losefocus(&#39;susdiv&#39;)"></div>
+</form>
+
+<div id="user" class="tr"><a href="https://time.is/log_in" title="sign up or log in"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+<path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path></svg></a></div><div id="toppromotion" class="tr" style="position:absolute;top:15px;right:170px"><a href="https://time.is/ad-free">NEW: Time.is Ad-free</a></div>
+</div><div id="time_section" class="w1" style="top: 0px;"><div id="msgs" class="tr w90 vsbl"><div id="msgdiv"></div><div id="front_loc" class="w1" style="visibility: visible;">La hora actual en <a href="https://time.is/Bucaramanga" itemscope="" itemtype="http://schema.org/City"><span itemprop="name">Colombia</span></a> es:</div></div><div style="width:100%;position:relative"><div id="clock0_bg" onclick="clockclick(event)"><time id="clock" style="font-size: 58px; line-height: 40px; margin-left: 66px;"><span id="bcdigit1" class="digit1" style="width:51px;margin-left:-12px">1</span><span id="bcdigit2" class="digit2" style="width:51px;margin-left:-12px">8</span><span class="sep" style="width:30px;margin-left:-12px">:</span><span id="bcdigit3" class="digit3" style="width:51px;margin-left:-12px">4</span><span id="bcdigit4" class="digit4" style="width:51px;margin-left:-12px">3</span><span class="sep" style="width:30px;margin-left:-12px">:</span><span id="bcdigit5" class="digit5" style="width:51px;margin-left:-12px">1</span><span id="bcdigit6" class="digit6" style="width:51px;margin-left:-12px">9</span></time></div></div><noscript><h2 class="w90 error">El reloj se actualizará automáticamente si activas JavaScript en su navegador.</h2></noscript><div id="dd" class="w90 tr clockdate" onclick="location=&#39;/calendar&#39;" title="Haz clic aquí para ver el calendario."> Martes,  Noviembre 5, 2024, <span class="nw">Semana 45</span></div><div id="daydiv" class="hidden"></div><div id="lC" class="w90 tr"><span id="locw">Sol: <span id="sun" class="nw">↑ 05:40 ↓ 17:33</span> - </br><a href="https://time.is/Bucaramanga#time_zone">Más información</a></span> -</br><a href="https://time.is/h/384811" rel="nofollow"><span>Usar Colombia como tu ubicación predeterminada.</span></a> - <a href="https://time.is/" onclick="conf[&#39;b&#39;]+=&#39;.384811&#39;;delete conf[&#39;a&#39;];T_I.recook();location=&#39;/&#39;;return false" rel="nofollow"><span>Agregar a ubicaciones favoritas.</span></a>
+</div><div class="w90 tr"><ul id="favs" class="tbx collapsible"><li id="favbox-0"><a href="https://time.is/Tokyo" id="time-0">Tokio<br><span class="time"><span class="mon">0</span><span class="mon">8</span>:<span class="mon">4</span><span class="mon">3</span></span></a></li><li id="favbox-1"><a href="https://time.is/Beijing" id="time-1">Pekín<br><span class="time"><span class="mon">0</span><span class="mon">7</span>:<span class="mon">4</span><span class="mon">3</span></span></a></li><li id="favbox-2"><a href="https://time.is/Paris" id="time-2">París<br><span class="time"><span class="mon">0</span><span class="mon">0</span>:<span class="mon">4</span><span class="mon">3</span></span></a></li><li id="favbox-3"><a href="https://time.is/London" id="time-3">Londres<br><span class="time"><span class="mon">2</span><span class="mon">3</span>:<span class="mon">4</span><span class="mon">3</span></span></a></li><li id="favbox-4"><a href="https://time.is/New_York" id="time-4">Nueva York<br><span class="time"><span class="mon">1</span><span class="mon">8</span>:<span class="mon">4</span><span class="mon">3</span></span></a></li><li id="favbox-5"><a href="https://time.is/Los_Angeles" id="time-5">Los Ángeles<br><span class="time"><span class="mon">1</span><span class="mon">5</span>:<span class="mon">4</span><span class="mon">3</span></span></a></li></ul><div id="favsXpandr" style="float:right"><a href="https://time.is/#" onclick="return expand_favs()">más</a></div></div><div id="recover" style="width:100%"><div class="tr" style="width:90%;padding:0 5% 20px 5%"><div class="rad" style="float:right;min-height:280px"><div style="float:inherit" id="primis-incontent-desktop-3"><div id="freestar-video-parent-dt"><div id="freestar-video-child"></div></div></div>
+<div id="time.is_728x90_970x90_970x250_300x250_320x50_ATF" style="position:relative;width:336px;clear:none;float:right;margin-right:40px"></div>
+<div id="time.is_300x250_ATF3" style="position:relative;width:336px;float:right;clear:none;margin-right:20px;"></div>
+<div data-freestar-ad="__300x250" id="time.is_728x90_970x90_970x250_300x250_320x50_ATF2" style="position:relative;float:right;clear:none;margin-right:35px"></div>
+<script data-cfasync="false">
+freestar.config.enabled_slots.push({placementName:"time.is_728x90_970x90_970x250_300x250_320x50_ATF",slotId:"time.is_728x90_970x90_970x250_300x250_320x50_ATF"});
+freestar.config.enabled_slots.push({placementName:"time.is_728x90_970x90_970x250_300x250_320x50_ATF2",slotId:"time.is_728x90_970x90_970x250_300x250_320x50_ATF2"});
+freestar.config.enabled_slots.push({placementName:"time.is_300x250_ATF3",slotId:"time.is_300x250_ATF3"})
+</script></div><div style="float:right"><a href="https://time.is/ad-free">Remove the ads? Get Time.is Ad-free!</a></div></div></div>
+</div>
+<script>
+bod=gob('bdy')
+var l='es',conf={d:'%l, %F %j, %Y, %W',t:'H:i:s',f:'mt',c:'2',o:'',z:'0.8',a:'1',b:'51ea29.4e4185.28571f.2d99db.1bb85e.1c3b23',w:'1',v:'20241105',h:0,i:'.8',Z:'0.8',m:'',u:''},locs={favs:[['1850147','444','Tokio','Tokio, Japón','Tokyo','35,68950','139,69171','8.336.599',''],['1816670','43d','Pekín','Pekín, China','Beijing','39,90750','116,39723','18.960.744',''],['2988507','71f','París','París, Francia','Paris','48,85341','2,34880','2.138.551',''],['2643743','716','Londres','Londres, Reino Unido','London','51,50853','-0,12574','8.961.989',''],['5128581','161','Nueva York','Nueva York, Estados Unidos','New_York','40,71427','-74,00597','8.804.190','10'],['5368361','14e','Los Ángeles','Los Ángeles, California, Estados Unidos','Los_Angeles','34,05223','-118,24368','3.898.747','89']],main:[['3688465','11b','Bucaramanga','Bucaramanga, Colombia','Bucaramanga','7,12539','-73,11980','581.130','']]},zones={'11b':['America/Bogota','-05',[-300]],'444':['Asia/Tokyo','JST',[540]],'43d':['Asia/Shanghai','CST',[480]],'71f':['Europe/Paris','CET',[60,1743296400,120]],'716':['Europe/London','GMT',[0,1743296400,60]],'161':['America/New_York','EST',[-300,1741503600,-240]],'14e':['America/Los_Angeles','PST',[-480,1741514400,-420]]},
+susdest='/'
+zone_id='America/Bogota',Tstate={chosen_loc:-1,current_page:"specific_location"};
+zone_code='clientside'
+zone_offset=-new Date().getTimezoneOffset()
+zones['clientside']=['','',[zone_offset]]
+
+days=["Domingo"," Lunes"," Martes"," Miércoles"," Jueves"," Viernes"," Sábado"]
+daysh=["Dom"," Lun"," Mar"," Mié"," Jue"," Vie"," Sáb"]
+daysI=["D"," L"," M"," M ","J"," V"," S"]
+months=["Enero"," Febrero"," Marzo"," Abril"," Mayo"," Junio"," Julio"," Agosto"," Septiembre"," Octubre"," Noviembre"," Diciembre"]
+monthsh=["Ene."," Feb."," Mar."," Abr."," May."," Jun."," Jul."," Ago."," Sep."," Oct."," Nov."," Dic."]
+p_exactt="¡Tienes la hora exacta!"
+p_t_is="null"
+p_w="Semana "
+p_wn="Semana %n"
+p_d="día"
+p_ds=" días"
+p_h=" hora"
+p_hs=" horas"
+p_m=" minuto"
+p_ms=" minutos"
+p_s=" segundo"
+p_ss=" segundos"
+p_ss_short=" s"
+p_ur_late="Su reloj está atrasado %t."
+p_ur_early="Tu reloj está adelantado %t."
+p_acc="La precisión de sincronización fue de ±%t."
+p_acc_short="Precisión de Sinc.: ±%t"
+p_last_s="Última sincronización: %t"
+p_last_s_short="Última sinc.: %t"
+p_dec_sym=","
+p_and=" y "
+p_time_diff="La diferencia con Time.is fue de %t (±%D). "
+p_time_diff_short="Dif.: %t (±%D) "
+p_failh="La sincronización no se realizó correctamente. "
+p_fail="No se puede lograr una alta precisión porque la conexión o el ordenador es lento u ocupado. "
+p_syncing="Sincronizando"
+p_conn_failed="No se puede conectar con el servidor."
+p_try_again="¿Desea intentar de nuevo?"
+p_no_match="No hubo coincidencias."
+p_no_au="¡Lo sentimos, el sonido requiere una versión reciente de Firefox, Opera o Safari!"
+p_no_cookie_support="error_no_cookie_support"
+p_td="Hoy"
+e_loc="Ubicación"
+p_time_remaining="Tiempo restante: %t"
+p_time_since="Tiempo desde entonces: %t"
+
+p_now='ahora'
+p_yesterday='ayer'
+p_tomorrow='mañana'
+p_today='hoy'
+p_in_n='en %n'
+p_ago='hace %n'
+p_In_x_days='En %n %days'
+p_x_days_ago='%n %days atrás'
+p_x_days_before='%n %days antes de %other_date'
+p_x_days_after='%n %days luego de %other_date'
+
+p_today_date='[Hoy]: %d'
+units=[p_ss,p_ms,p_hs,p_ds],units_sing=[p_s,p_m,p_h,' '+p_d]
+
+p_enter_loc='Ubicación'
+
+p_default_time_format='H:i:sA'
+p_date_formats=['%l, %F %j, %Y, %W',
+'%l %d/%m/%y, %W',
+'%l %d/%m/%y',
+'%Y-%m-%d']
+
+
+spdays={}
+noctp=1;adheight=0;;show_big_clock=1;force24=0;beginning_of_time()
+onresize=function(){setsizes(2)}
+</script>
+</div><section id="top_cities_tmp"><div class="cloud w90 d"><a href="https://time.is/Abu_Dhabi" class="s14">Abu Dabi</a> <a href="https://time.is/Addis_Ababa" class="s9">Addis Abeba</a> <a href="https://time.is/Amman" class="s12">Ammán</a> <a href="https://time.is/Antananarivo" class="s12">Antananarivo</a> <a href="https://time.is/Athens" class="s14">Atenas</a> <a href="https://time.is/Auckland,_New_Zealand" class="s15">Auckland</a> <a href="https://time.is/Baghdad" class="s7">Bagdad</a> <a href="https://time.is/Bangkok" class="s7">Bangkok</a> <a href="https://time.is/Barcelona,_Spain" class="s11">Barcelona</a> <a href="https://time.is/Beirut" class="s11">Beirut</a> <a href="https://time.is/Berlin" class="s10">Berlín</a> <a href="https://time.is/Bogot%C3%A1" class="s6">Bogotá</a> <a href="https://time.is/Boston" class="s14">Boston</a> <a href="https://time.is/Brussels" class="s13">Bruselas</a> <a href="https://time.is/Buenos_Aires" class="s3 bold">Buenos Aires</a> <a href="https://time.is/Cairo" class="s6">Cairo</a> <a href="https://time.is/Guangzhou" class="s8">Cantón</a> <a href="https://time.is/Caracas" class="s8">Caracas</a> <a href="https://time.is/Chicago" class="s5 bold">Chicago</a> <a href="https://time.is/Mexico_City" class="s1 bold">Ciudad de México</a> <a href="https://time.is/Dhaka" class="s4 bold">Daca</a> <a href="https://time.is/Damascus" class="s11">Damasco</a> <a href="https://time.is/Delhi" class="s2 bold">Delhi</a> <a href="https://time.is/Dublin" class="s13">Dublín</a> <a href="https://time.is/Dubai" class="s4 bold">Dubái</a> <a href="https://time.is/Cape_Town" class="s8">El Cabo</a> <a href="https://time.is/Istanbul" class="s2 bold">Estambul</a> <a href="https://time.is/Stockholm" class="s12">Estocolmo</a> <a href="https://time.is/Frankfurt" class="s14">Francfort</a> <a href="https://time.is/Hanoi" class="s12">Hanói</a> <a href="https://time.is/Helsinki" class="s15">Helsinki</a> <a href="https://time.is/Hong_Kong" class="s4 bold">Hong Kong</a> <a href="https://time.is/Honolulu" class="s16">Honolulu</a> <a href="https://time.is/Karachi" class="s2 bold">Karachi</a> <a href="https://time.is/Kathmandu" class="s11">Katmandú</a> <a href="https://time.is/Kinshasa" class="s5 bold">Kinsasa</a> <a href="https://time.is/Kuala_Lumpur" class="s11">Kuala Lumpur</a> <a href="https://time.is/Kyiv" class="s9">Kyiv</a> <a href="https://time.is/Havana" class="s10">La Habana</a> <a href="https://time.is/Mecca" class="s12">La Meca</a> <a href="https://time.is/Lagos" class="s5 bold">Lagos</a> <a href="https://time.is/Las_Vegas" class="s15">Las Vegas</a> <a href="https://time.is/Lima" class="s6 bold">Lima</a> <a href="https://time.is/London" class="s1 bold">Londres</a> <a href="https://time.is/Los_Angeles" class="s1 bold">Los Ángeles</a> <a href="https://time.is/Luanda" class="s9">Luanda</a> <a href="https://time.is/Madrid" class="s8">Madrid</a> <a href="https://time.is/Manila" class="s3 bold">Manila</a> <a href="https://time.is/Miami" class="s16">Miami</a> <a href="https://time.is/Milan" class="s13">Milán</a> <a href="https://time.is/Moscow" class="s2 bold">Moscú</a> <a href="https://time.is/Mumbai" class="s3 bold">Mumbai</a> <a href="https://time.is/New_Delhi" class="s16">Nueva Delhi</a> <a href="https://time.is/New_York" class="s1 bold">Nueva York</a> <a href="https://time.is/Nuuk" class="s16">Nuuk</a> <a href="https://time.is/Osaka" class="s9">Osaka</a> <a href="https://time.is/Oslo" class="s15">Oslo</a> <a href="https://time.is/Paris" class="s3 bold">París</a> <a href="https://time.is/Beijing" class="s1 bold">Pekín</a> <a href="https://time.is/Prague" class="s13">Praga</a> <a href="https://time.is/Yangon" class="s7">Rangún</a> <a href="https://time.is/Reykjavik" class="s16">Reikiavik</a> <a href="https://time.is/Riyadh" class="s8">Riad</a> <a href="https://time.is/Rome" class="s10">Roma</a> <a href="https://time.is/Rio_de_Janeiro" class="s6">Río de Janeiro</a> <a href="https://time.is/San_Francisco" class="s13">San Francisco</a> <a href="https://time.is/Saint_Petersburg" class="s7">San Petersburgo</a> <a href="https://time.is/Santiago" class="s7">Santiago de Chile</a> <a href="https://time.is/Seoul" class="s4 bold">Seúl</a> <a href="https://time.is/Shanghai" class="s3 bold">Shangai</a> <a href="https://time.is/Shenzhen" class="s9">Shenzhen</a> <a href="https://time.is/Singapore" class="s4 bold">Singapur</a> <a href="https://time.is/S%C3%A3o_Paulo" class="s2 bold">São Paulo</a> <a href="https://time.is/Sydney" class="s4 bold">Sídney</a> <a href="https://time.is/Taipei" class="s5 bold">Taipéi</a> <a href="https://time.is/Tehran" class="s6">Teherán</a> <a href="https://time.is/Tel_Aviv" class="s13">Tel Aviv</a> <a href="https://time.is/Tokyo" class="s1 bold">Tokio</a> <a href="https://time.is/Toronto" class="s7">Toronto</a> <a href="https://time.is/Vancouver" class="s10">Vancouver</a> <a href="https://time.is/Warsaw" class="s10">Varsovia</a> <a href="https://time.is/Vienna" class="s10">Viena</a> <a href="https://time.is/Washington,_D.C." class="s15">Washington, D.C.</a> <a href="https://time.is/Jakarta" class="s5 bold">Yakarta</a> <a href="https://time.is/Amsterdam" class="s14">Ámsterdam</a> <br>
+<br>
+<a class="s6" href="https://time.is/UTC">UTC</a>
+<a class="s6" href="https://time.is/GMT">GMT</a>
+<a class="s6" href="https://time.is/CET">CET</a><br>
+<a class="s6" href="https://time.is/PT">Pacific Time</a>
+<a class="s6" href="https://time.is/MT">Mountain Time</a>
+<a class="s6" href="https://time.is/CT">Central Time</a>
+<a class="s6" href="https://time.is/ET">Eastern Time</a>
+<a class="s6" href="https://time.is/China_Standard_Time">China Standard Time</a>
+<a class="s6" href="https://time.is/IST">India Standard Time</a>
+</div><div style="display:flex;justify-content:center;width:100%;margin-top:20px;height:250px">		<div style="position:relative;float:left">
+<div style="float:left;clear:none" data-freestar-ad="__300x250" id="time.is_homepage_300x250">
+<script data-cfasync="false">
+freestar.config.enabled_slots.push({ placementName: "time.is_homepage_300x250", slotId: "time.is_homepage_300x250" });
+</script>
+</div>
+<div style="margin-left:20px;float:left;clear:none" data-freestar-ad="__300x250" id="time.is_homepage_300x250_2">
+<script data-cfasync="false">
+freestar.config.enabled_slots.push({ placementName: "time.is_homepage_300x250_2", slotId: "time.is_homepage_300x250_2" });
+</script></div></div></div><div id="freestar-video-desktop"></div><div id="freestar-video-mobile"></div></section><section id="quote"><blockquote>"The passage of time will usually extract the venom of most things and render them harmless."</blockquote><cite>Haruki Murakami</cite></section><div id="menupositioner">
+<div id="close-menu" class="close-btn" onclick="toggle_menu(0)">×</div>
+<div id="menutransformer">
+
+<nav id="nav">
+<div>
+<h3><a href="https://time.is/" class="logo">Time.is</a> <span class="slogan"><span>- </span>Hora exacta para cualquier zona horaria.</span></h3>
+
+<div id="menulinks"><ul><li class="chosen"><a href="https://time.is/">Hora exacta</a></li><li><a href="https://time.is/compare">Tiempo aquí y allá</a></li><li><a href="https://time.is/your_time_zone">Your time zone</a></li><li><a href="https://time.is/time_zones">Zonas horarias</a></li><li><a href="https://time.is/DST_2024">Horario de Verano</a></li><li><a href="https://time.is/clock">Reloj</a></li><li><a href="https://time.is/calendar">Calendario</a></li><li><a href="https://time.is/compact_calendar">Calendario compacto</a></li><li><a href="https://time.is/week">Número de semana</a></li><li id="aub"><a href="https://time.is/sound">Sonido</a></li></ul><ul><li><a href="https://time.is/apps">Aplicaciones</a></li><li><a href="https://time.is/widgets">Widgets</a></li><li><a href="https://time.is/time_zone_news">Noticias de la zona horaria</a></li><li><a href="https://time.is/mailing_list">Boletín de Noticias</a></li></ul><ul><li><a href="https://time.is/UTC">UTC</a></li><li><a href="https://time.is/Unix_time">Reloj Unix</a></li><li><a href="https://time.is/Unix_time_converter">Convertidor de Tiempo Unix</a></li></ul><ul><li><a href="https://time.is/customize">Personalizar</a></li><li><a href="https://time.is/FAQ">Preguntas Frecuentes</a></li><li><a href="https://time.is/howto">¿Cómo usar Time.is?</a></li><li><a href="https://time.is/about">Acerca de Time.is</a></li><li><a href="https://time.is/contact">Contáctanos</a></li></ul><ul><li><a href="https://time.is/advertise">Publicitar</a></li><li><a href="https://time.is/terms_of_use">Términos de uso:</a></li><li><a href="https://time.is/terms_of_use#privacy_policy">Políticas de privacidad</a></li></ul></div></div>
+<div id="follow_app" class="below">
+<div id="appbadge"><a href="https://apps.apple.com/app/time.is/id857189816"><img src="./srcs/assets/time/Download_on_the_App_Store_Badge_ES_135x40.svg" alt="Download on the App Store"></a></div>
+</div>
+</nav>
+<script>
+place_badges()
+</script>
+<footer id="footer"><nav></nav>
+<div>
+Time.is muestra la hora exacta de un reloj atómico oficial de cualquier zona horaria (más de 7 millones de lugares) en 57 idiomas.<br>
+</div>
+<div id="footerlangs">
+<a href="https://time.is/?lang=en" title="English">What time is it?</a>
+<a href="https://time.is/?lang=zh" title="Chinese (simplified) / 中文">几点了？</a>
+<a href="https://time.is/?lang=hi" title="Hindi / हिंदी">क्या समय हुआ है?</a>
+<a href="https://time.is/?lang=es" title="Spanish / español">¿Qué hora es?</a>
+<a href="https://time.is/?lang=fr" title="French / français">Quelle heure est-il ?</a>
+<a href="https://time.is/?lang=ar" title="Arabic / العربية">كم الساعة</a>
+<a href="https://time.is/?lang=bn" title="Bengali / বাংলা">এখন কয়টা বাজে?</a>
+<a href="https://time.is/?lang=ru" title="Russian / русский">Который час?</a>
+<a href="https://time.is/?lang=pt_br" title="Portuguese (Brazil) / português (Brasil)">Que horas são?</a>
+<a href="https://time.is/?lang=id" title="Indonesian / bahasa Indonesia">Jam berapa?</a>
+<a href="https://time.is/?lang=de" title="German / Deutsch">Wieviel Uhr ist es?</a>
+<a href="https://time.is/?lang=ja" title="Japanese / 日本語">今何時ですか？</a>
+<a href="https://saatkac.info.tr/" title="Turkish / Türkçe">Saat kaç?</a>
+<a href="https://time.is/?lang=ta" title="Tamil / தமிழ்">என்ன நேரம்?</a>
+<a href="https://time.is/?lang=ur" title="Urdu / اردو زبان">؟ےہ اوہ تقو ایک</a>
+<a href="https://time.is/languages">≫ more languages</a>
+</div>
+</footer>
+</div>
+</div><script>
+window._qevents=window._qevents||[];
+(function(){
+var elem=document.createElement('script');
+elem.src=(document.location.protocol=="https:"?"https://secure":"http://edge")+".quantserve.com/quant.js";
+elem.async=true
+elem.type="text/javascript"
+var scpt=document.getElementsByTagName('script')[0]
+scpt.parentNode.insertBefore(elem, scpt)
+})();
+window._qevents.push({
+qacct:"p-4TE0mgHmkNwB-",
+uid:"__INSERT_EMAIL_HERE__"
+})
+</script>
+<noscript>
+<div style="display:none">
+<img src="//pixel.quantserve.com/pixel/p-4TE0mgHmkNwB-.gif" style="height:1px;width:1px" alt="Quantcast"/>
+</div>
+</noscript>
+<div class="otto-shadow-dom" id="otto-shadow-dom-id"><template shadowrootmode="open"><div><div class="otto-modal-area"></div></div><style>/*
+! tailwindcss v3.0.19 | MIT License | https://tailwindcss.com
+*//*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box; /* 1 */
+  border-width: 0; /* 2 */
+  border-style: solid; /* 2 */
+  border-color: #e5e7eb; /* 2 */
+}
+
+::before,
+::after {
+  --tw-content: '';
+}
+
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+*/
+
+html {
+  line-height: 1.5; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -moz-tab-size: 4; /* 3 */
+  -o-tab-size: 4;
+     tab-size: 4; /* 3 */
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */
+}
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+
+body {
+  margin: 0; /* 1 */
+  line-height: inherit; /* 2 */
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+  border-top-width: 1px; /* 3 */
+}
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured `mono` font family by default.
+2. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+  border-collapse: collapse; /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: inherit; /* 1 */
+  color: inherit; /* 1 */
+  margin: 0; /* 2 */
+  padding: 0; /* 3 */
+}
+
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+
+button,
+select {
+  text-transform: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button; /* 1 */
+  background-color: transparent; /* 2 */
+  background-image: none; /* 2 */
+}
+
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+
+:-moz-focusring {
+  outline: auto;
+}
+
+/*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+[type='search'] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+  display: list-item;
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+
+/*
+Set the default cursor for buttons.
+*/
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+:disabled {
+  cursor: default;
+}
+
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block; /* 1 */
+  vertical-align: middle; /* 2 */
+}
+
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/*
+Ensure the default browser behavior of the `hidden` attribute.
+*/
+
+[hidden] {
+  display: none;
+}
+
+*, ::before, ::after {
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+.container {
+  width: 100%;
+}
+@media (min-width: 640px) {
+
+  .container {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+
+  .container {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1280px) {
+
+  .container {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1536px) {
+
+  .container {
+    max-width: 1536px;
+  }
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+.pointer-events-none {
+  pointer-events: none;
+}
+.pointer-events-auto {
+  pointer-events: auto;
+}
+.visible {
+  visibility: visible;
+}
+.static {
+  position: static;
+}
+.fixed {
+  position: fixed;
+}
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
+.inset-1 {
+  top: 0.25rem;
+  right: 0.25rem;
+  bottom: 0.25rem;
+  left: 0.25rem;
+}
+.top-0 {
+  top: 0px;
+}
+.top-5 {
+  top: 1.25rem;
+}
+.top-\[96px\] {
+  top: 96px;
+}
+.right-\[50px\] {
+  right: 50px;
+}
+.top-2 {
+  top: 0.5rem;
+}
+.top-3 {
+  top: 0.75rem;
+}
+.top-\[50\%\] {
+  top: 50%;
+}
+.left-\[50\%\] {
+  left: 50%;
+}
+.bottom-\[96px\] {
+  bottom: 96px;
+}
+.right-\[-100px\] {
+  right: -100px;
+}
+.top-\[5px\] {
+  top: 5px;
+}
+.left-\[25px\] {
+  left: 25px;
+}
+.left-\[5px\] {
+  left: 5px;
+}
+.top-\[70px\] {
+  top: 70px;
+}
+.left-\[-20px\] {
+  left: -20px;
+}
+.top-\[-10px\] {
+  top: -10px;
+}
+.left-\[30px\] {
+  left: 30px;
+}
+.left-\[130px\] {
+  left: 130px;
+}
+.top-\[10px\] {
+  top: 10px;
+}
+.left-\[40px\] {
+  left: 40px;
+}
+.right-2 {
+  right: 0.5rem;
+}
+.top-\[12px\] {
+  top: 12px;
+}
+.left-\[0px\] {
+  left: 0px;
+}
+.left-\[50px\] {
+  left: 50px;
+}
+.top-\[15px\] {
+  top: 15px;
+}
+.top-6 {
+  top: 1.5rem;
+}
+.top-\[-20px\] {
+  top: -20px;
+}
+.left-3 {
+  left: 0.75rem;
+}
+.bottom-3 {
+  bottom: 0.75rem;
+}
+.top-\[-30px\] {
+  top: -30px;
+}
+.top-7 {
+  top: 1.75rem;
+}
+.right-\[-90px\] {
+  right: -90px;
+}
+.top-\[-55px\] {
+  top: -55px;
+}
+.right-\[20px\] {
+  right: 20px;
+}
+.top-\[40px\] {
+  top: 40px;
+}
+.top-\[20px\] {
+  top: 20px;
+}
+.top-\[30px\] {
+  top: 30px;
+}
+.top-\[-5px\] {
+  top: -5px;
+}
+.left-\[60px\] {
+  left: 60px;
+}
+.left-\[250px\] {
+  left: 250px;
+}
+.right-0 {
+  right: 0px;
+}
+.right-4 {
+  right: 1rem;
+}
+.top-\[-60px\] {
+  top: -60px;
+}
+.top-\[125px\] {
+  top: 125px;
+}
+.top-\[60px\] {
+  top: 60px;
+}
+.left-\[10px\] {
+  left: 10px;
+}
+.top-10 {
+  top: 2.5rem;
+}
+.left-\[-10px\] {
+  left: -10px;
+}
+.left-1 {
+  left: 0.25rem;
+}
+.top-1 {
+  top: 0.25rem;
+}
+.z-\[2\] {
+  z-index: 2;
+}
+.z-\[1\] {
+  z-index: 1;
+}
+.z-\[99999\] {
+  z-index: 99999;
+}
+.z-\[9999\] {
+  z-index: 9999;
+}
+.z-\[10000\] {
+  z-index: 10000;
+}
+.z-\[100000\] {
+  z-index: 100000;
+}
+.z-0 {
+  z-index: 0;
+}
+.z-\[9999999\] {
+  z-index: 9999999;
+}
+.z-10 {
+  z-index: 10;
+}
+.z-\[4\] {
+  z-index: 4;
+}
+.z-\[20000\] {
+  z-index: 20000;
+}
+.m-0 {
+  margin: 0px;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.my-1 {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+.mx-0 {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.mx-1 {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+.mb-14 {
+  margin-bottom: 3.5rem;
+}
+.mb-4 {
+  margin-bottom: 1rem;
+}
+.mt-\[6px\] {
+  margin-top: 6px;
+}
+.mt-\[60px\] {
+  margin-top: 60px;
+}
+.mt-5 {
+  margin-top: 1.25rem;
+}
+.mt-4 {
+  margin-top: 1rem;
+}
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+.box-border {
+  box-sizing: border-box;
+}
+.block {
+  display: block;
+}
+.flex {
+  display: flex;
+}
+.grid {
+  display: grid;
+}
+.contents {
+  display: contents;
+}
+.hidden {
+  display: none;
+}
+.h-\[540px\] {
+  height: 540px;
+}
+.h-\[250px\] {
+  height: 250px;
+}
+.h-auto {
+  height: auto;
+}
+.h-\[4px\] {
+  height: 4px;
+}
+.h-full {
+  height: 100%;
+}
+.h-\[150px\] {
+  height: 150px;
+}
+.h-12 {
+  height: 3rem;
+}
+.h-1 {
+  height: 0.25rem;
+}
+.h-\[2px\] {
+  height: 2px;
+}
+.h-\[24px\] {
+  height: 24px;
+}
+.h-\[40px\] {
+  height: 40px;
+}
+.h-screen {
+  height: 100vh;
+}
+.h-\[calc\(100\%-1rem\)\] {
+  height: calc(100% - 1rem);
+}
+.h-6 {
+  height: 1.5rem;
+}
+.h-3 {
+  height: 0.75rem;
+}
+.h-\[100px\] {
+  height: 100px;
+}
+.h-\[34px\] {
+  height: 34px;
+}
+.h-\[5px\] {
+  height: 5px;
+}
+.h-px {
+  height: 1px;
+}
+.h-8 {
+  height: 2rem;
+}
+.h-4 {
+  height: 1rem;
+}
+.h-\[60px\] {
+  height: 60px;
+}
+.h-10 {
+  height: 2.5rem;
+}
+.h-\[58px\] {
+  height: 58px;
+}
+.h-\[66px\] {
+  height: 66px;
+}
+.h-\[44px\] {
+  height: 44px;
+}
+.h-\[160px\] {
+  height: 160px;
+}
+.h-\[110px\] {
+  height: 110px;
+}
+.h-\[190px\] {
+  height: 190px;
+}
+.h-\[70px\] {
+  height: 70px;
+}
+.h-\[32px\] {
+  height: 32px;
+}
+.h-\[200px\] {
+  height: 200px;
+}
+.h-2 {
+  height: 0.5rem;
+}
+.h-\[170px\] {
+  height: 170px;
+}
+.h-\[1px\] {
+  height: 1px;
+}
+.h-\[232px\] {
+  height: 232px;
+}
+.h-\[140px\] {
+  height: 140px;
+}
+.h-\[18px\] {
+  height: 18px;
+}
+.h-\[10px\] {
+  height: 10px;
+}
+.h-\[38px\] {
+  height: 38px;
+}
+.h-7 {
+  height: 1.75rem;
+}
+.h-\[450px\] {
+  height: 450px;
+}
+.h-\[420px\] {
+  height: 420px;
+}
+.h-\[30px\] {
+  height: 30px;
+}
+.h-\[350px\] {
+  height: 350px;
+}
+.max-h-\[300px\] {
+  max-height: 300px;
+}
+.max-h-full {
+  max-height: 100%;
+}
+.max-h-\[334px\] {
+  max-height: 334px;
+}
+.max-h-\[370px\] {
+  max-height: 370px;
+}
+.max-h-\[210px\] {
+  max-height: 210px;
+}
+.max-h-\[230px\] {
+  max-height: 230px;
+}
+.min-h-\[110px\] {
+  min-height: 110px;
+}
+.min-h-\[320px\] {
+  min-height: 320px;
+}
+.min-h-\[200px\] {
+  min-height: 200px;
+}
+.w-\[350px\] {
+  width: 350px;
+}
+.w-full {
+  width: 100%;
+}
+.w-\[450px\] {
+  width: 450px;
+}
+.w-\[40\%\] {
+  width: 40%;
+}
+.w-\[300px\] {
+  width: 300px;
+}
+.w-\[230px\] {
+  width: 230px;
+}
+.w-12 {
+  width: 3rem;
+}
+.w-\[50px\] {
+  width: 50px;
+}
+.w-\[200px\] {
+  width: 200px;
+}
+.w-\[24px\] {
+  width: 24px;
+}
+.w-14 {
+  width: 3.5rem;
+}
+.w-3 {
+  width: 0.75rem;
+}
+.w-\[34px\] {
+  width: 34px;
+}
+.w-8 {
+  width: 2rem;
+}
+.w-4 {
+  width: 1rem;
+}
+.w-auto {
+  width: auto;
+}
+.w-\[430px\] {
+  width: 430px;
+}
+.w-10 {
+  width: 2.5rem;
+}
+.w-\[58px\] {
+  width: 58px;
+}
+.w-\[195px\] {
+  width: 195px;
+}
+.w-\[44px\] {
+  width: 44px;
+}
+.w-\[5px\] {
+  width: 5px;
+}
+.w-\[220px\] {
+  width: 220px;
+}
+.w-\[180px\] {
+  width: 180px;
+}
+.w-\[295px\] {
+  width: 295px;
+}
+.w-\[86px\] {
+  width: 86px;
+}
+.w-\[1px\] {
+  width: 1px;
+}
+.w-16 {
+  width: 4rem;
+}
+.w-\[18px\] {
+  width: 18px;
+}
+.w-\[250px\] {
+  width: 250px;
+}
+.w-\[38px\] {
+  width: 38px;
+}
+.w-7 {
+  width: 1.75rem;
+}
+.w-6 {
+  width: 1.5rem;
+}
+.w-\[262px\] {
+  width: 262px;
+}
+.w-\[30px\] {
+  width: 30px;
+}
+.min-w-\[280px\] {
+  min-width: 280px;
+}
+.min-w-\[470px\] {
+  min-width: 470px;
+}
+.max-w-\[350px\] {
+  max-width: 350px;
+}
+.max-w-\[300px\] {
+  max-width: 300px;
+}
+.max-w-\[700px\] {
+  max-width: 700px;
+}
+.max-w-\[320px\] {
+  max-width: 320px;
+}
+.max-w-\[470px\] {
+  max-width: 470px;
+}
+.max-w-\[360px\] {
+  max-width: 360px;
+}
+.max-w-\[230px\] {
+  max-width: 230px;
+}
+.max-w-\[370px\] {
+  max-width: 370px;
+}
+.max-w-\[200px\] {
+  max-width: 200px;
+}
+.max-w-\[510px\] {
+  max-width: 510px;
+}
+.max-w-\[400px\] {
+  max-width: 400px;
+}
+.max-w-5xl {
+  max-width: 64rem;
+}
+.max-w-\[220px\] {
+  max-width: 220px;
+}
+.max-w-\[170px\] {
+  max-width: 170px;
+}
+.max-w-\[120px\] {
+  max-width: 120px;
+}
+.max-w-xl {
+  max-width: 36rem;
+}
+.translate-x-\[-50\%\] {
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.translate-y-\[-50\%\] {
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.translate-x-full {
+  --tw-translate-x: 100%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.-translate-y-1 {
+  --tw-translate-y: -0.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.-rotate-3 {
+  --tw-rotate: -3deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.rotate-\[10deg\] {
+  --tw-rotate: 10deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.rotate-\[6deg\] {
+  --tw-rotate: 6deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.rotate-\[-8deg\] {
+  --tw-rotate: -8deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.rotate-\[-4deg\] {
+  --tw-rotate: -4deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.rotate-\[13deg\] {
+  --tw-rotate: 13deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.-rotate-12 {
+  --tw-rotate: -12deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.rotate-12 {
+  --tw-rotate: 12deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.scale-90 {
+  --tw-scale-x: .9;
+  --tw-scale-y: .9;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.scale-75 {
+  --tw-scale-x: .75;
+  --tw-scale-y: .75;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.scale-105 {
+  --tw-scale-x: 1.05;
+  --tw-scale-y: 1.05;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.scale-\[0\.6\] {
+  --tw-scale-x: 0.6;
+  --tw-scale-y: 0.6;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+@-webkit-keyframes bounce {
+
+  0%, 100% {
+    transform: translateY(-25%);
+    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
+            animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+
+  50% {
+    transform: none;
+    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
+            animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+@keyframes bounce {
+
+  0%, 100% {
+    transform: translateY(-25%);
+    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
+            animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+
+  50% {
+    transform: none;
+    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
+            animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+.animate-bounce {
+  -webkit-animation: bounce 1s infinite;
+          animation: bounce 1s infinite;
+}
+@-webkit-keyframes spin {
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin {
+  -webkit-animation: spin 1s linear infinite;
+          animation: spin 1s linear infinite;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.cursor-grab {
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+.cursor-default {
+  cursor: default;
+}
+.select-none {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.appearance-none {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex-col {
+  flex-direction: column;
+}
+.place-items-center {
+  place-items: center;
+}
+.items-start {
+  align-items: flex-start;
+}
+.items-center {
+  align-items: center;
+}
+.items-baseline {
+  align-items: baseline;
+}
+.justify-start {
+  justify-content: flex-start;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.gap-4 {
+  gap: 1rem;
+}
+.gap-2 {
+  gap: 0.5rem;
+}
+.gap-3 {
+  gap: 0.75rem;
+}
+.gap-7 {
+  gap: 1.75rem;
+}
+.gap-5 {
+  gap: 1.25rem;
+}
+.gap-10 {
+  gap: 2.5rem;
+}
+.gap-\[2px\] {
+  gap: 2px;
+}
+.gap-1 {
+  gap: 0.25rem;
+}
+.gap-0 {
+  gap: 0px;
+}
+.gap-\[4px\] {
+  gap: 4px;
+}
+.gap-\[10px\] {
+  gap: 10px;
+}
+.gap-\[5px\] {
+  gap: 5px;
+}
+.gap-2\.5 {
+  gap: 0.625rem;
+}
+.gap-\[0px\] {
+  gap: 0px;
+}
+.gap-14 {
+  gap: 3.5rem;
+}
+.gap-6 {
+  gap: 1.5rem;
+}
+.gap-\[1px\] {
+  gap: 1px;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.overflow-scroll {
+  overflow: scroll;
+}
+.overflow-y-auto {
+  overflow-y: auto;
+}
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rounded-full {
+  border-radius: 9999px;
+}
+.rounded-md {
+  border-radius: 0.375rem;
+}
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+.rounded-\[4px\] {
+  border-radius: 4px;
+}
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+.rounded-\[12px\] {
+  border-radius: 12px;
+}
+.rounded-\[5px\] {
+  border-radius: 5px;
+}
+.rounded-\[100\%\] {
+  border-radius: 100%;
+}
+.rounded-\[7px\] {
+  border-radius: 7px;
+}
+.rounded {
+  border-radius: 0.25rem;
+}
+.rounded-\[10px\] {
+  border-radius: 10px;
+}
+.rounded-\[16px\] {
+  border-radius: 16px;
+}
+.rounded-2xl {
+  border-radius: 1rem;
+}
+.rounded-sm {
+  border-radius: 0.125rem;
+}
+.rounded-\[6px\] {
+  border-radius: 6px;
+}
+.rounded-b-\[8px\] {
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.rounded-b-md {
+  border-bottom-right-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+}
+.rounded-t-md {
+  border-top-left-radius: 0.375rem;
+  border-top-right-radius: 0.375rem;
+}
+.rounded-b-lg {
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+.border {
+  border-width: 1px;
+}
+.border-\[1px\] {
+  border-width: 1px;
+}
+.border-0 {
+  border-width: 0px;
+}
+.border-2 {
+  border-width: 2px;
+}
+.border-y {
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+}
+.border-t {
+  border-top-width: 1px;
+}
+.border-b {
+  border-bottom-width: 1px;
+}
+.border-r {
+  border-right-width: 1px;
+}
+.border-solid {
+  border-style: solid;
+}
+.border-dashed {
+  border-style: dashed;
+}
+.border-none {
+  border-style: none;
+}
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+.border-yellow-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(234 179 8 / var(--tw-border-opacity));
+}
+.border-\[rgba\(0\2c 0\2c 0\2c 0\.1\)\] {
+  border-color: rgba(0,0,0,0.1);
+}
+.border-\[\#000\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+.border-transparent {
+  border-color: transparent;
+}
+.border-gray-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+}
+.border-opacity-10 {
+  --tw-border-opacity: 0.1;
+}
+.border-opacity-20 {
+  --tw-border-opacity: 0.2;
+}
+.border-opacity-5 {
+  --tw-border-opacity: 0.05;
+}
+.border-opacity-\[2\%\] {
+  --tw-border-opacity: 2%;
+}
+.border-opacity-\[5\%\] {
+  --tw-border-opacity: 5%;
+}
+.border-opacity-\[10\%\] {
+  --tw-border-opacity: 10%;
+}
+.border-opacity-0 {
+  --tw-border-opacity: 0;
+}
+.bg-\[\#ebf3ff\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(235 243 255 / var(--tw-bg-opacity));
+}
+.bg-\[\#E088FF\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(224 136 255 / var(--tw-bg-opacity));
+}
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.bg-\[\#D2F1FF\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(210 241 255 / var(--tw-bg-opacity));
+}
+.bg-gray-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+.bg-\[\#E4E4E4\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(228 228 228 / var(--tw-bg-opacity));
+}
+.bg-\[\#458E74\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(69 142 116 / var(--tw-bg-opacity));
+}
+.bg-transparent {
+  background-color: transparent;
+}
+.bg-\[\#eb4b78\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(235 75 120 / var(--tw-bg-opacity));
+}
+.bg-\[\#719CFF\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(113 156 255 / var(--tw-bg-opacity));
+}
+.bg-gray-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+.bg-green-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 197 94 / var(--tw-bg-opacity));
+}
+.bg-blue-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
+.bg-yellow-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 204 21 / var(--tw-bg-opacity));
+}
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+.bg-\[\#fff\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.bg-\[\#e088ff\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(224 136 255 / var(--tw-bg-opacity));
+}
+.bg-\[\#E59BFF\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 155 255 / var(--tw-bg-opacity));
+}
+.bg-\[\#EBEAF7\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(235 234 247 / var(--tw-bg-opacity));
+}
+.bg-\[\#FFA144\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 161 68 / var(--tw-bg-opacity));
+}
+.bg-\[\#FE82DE\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 130 222 / var(--tw-bg-opacity));
+}
+.bg-\[\#68AEFF\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(104 174 255 / var(--tw-bg-opacity));
+}
+.bg-\[\#eeeeee\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(238 238 238 / var(--tw-bg-opacity));
+}
+.bg-\[\#DEDEDE\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(222 222 222 / var(--tw-bg-opacity));
+}
+.bg-\[\#45A175\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(69 161 117 / var(--tw-bg-opacity));
+}
+.bg-\[\#E8EEF6\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(232 238 246 / var(--tw-bg-opacity));
+}
+.bg-\[\#F6F6FB\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(246 246 251 / var(--tw-bg-opacity));
+}
+.bg-\[\#7F99BF\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(127 153 191 / var(--tw-bg-opacity));
+}
+.bg-\[rgba\(0\2c 0\2c 0\2c 7\%\)\] {
+  background-color: rgba(0,0,0,7%);
+}
+.bg-\[\#FF694B\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 105 75 / var(--tw-bg-opacity));
+}
+.bg-\[\#0066FF\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 102 255 / var(--tw-bg-opacity));
+}
+.bg-\[\#13B48D\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(19 180 141 / var(--tw-bg-opacity));
+}
+.bg-red-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+.bg-\[\#FF9F40\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 159 64 / var(--tw-bg-opacity));
+}
+.bg-\[\#FC8CF7\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 140 247 / var(--tw-bg-opacity));
+}
+.bg-\[\#f9f9f9\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 249 249 / var(--tw-bg-opacity));
+}
+.bg-\[\#F1F1F1\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 241 241 / var(--tw-bg-opacity));
+}
+.bg-\[\#67ACFF\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(103 172 255 / var(--tw-bg-opacity));
+}
+.bg-\[\#EDEDED\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(237 237 237 / var(--tw-bg-opacity));
+}
+.bg-\[\#D7E3FF\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(215 227 255 / var(--tw-bg-opacity));
+}
+.bg-\[\#fafafa\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 250 250 / var(--tw-bg-opacity));
+}
+.bg-\[\#ee4d37\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(238 77 55 / var(--tw-bg-opacity));
+}
+.bg-\[\#EEEEEE\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(238 238 238 / var(--tw-bg-opacity));
+}
+.bg-\[\#EAAFFF\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 175 255 / var(--tw-bg-opacity));
+}
+.bg-gray-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
+.bg-\[\#58A4FF\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(88 164 255 / var(--tw-bg-opacity));
+}
+.bg-\[\#5B40FF\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(91 64 255 / var(--tw-bg-opacity));
+}
+.bg-red-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
+}
+.bg-\[\#4F83FA\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(79 131 250 / var(--tw-bg-opacity));
+}
+.bg-blue-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+}
+.bg-\[\#E8E8E8\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(232 232 232 / var(--tw-bg-opacity));
+}
+.bg-\[\#E6E6E6\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(230 230 230 / var(--tw-bg-opacity));
+}
+.bg-\[\#C9E5FF\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(201 229 255 / var(--tw-bg-opacity));
+}
+.bg-\[\#EAEAEA\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 234 234 / var(--tw-bg-opacity));
+}
+.bg-opacity-20 {
+  --tw-bg-opacity: 0.2;
+}
+.bg-opacity-10 {
+  --tw-bg-opacity: 0.1;
+}
+.bg-opacity-5 {
+  --tw-bg-opacity: 0.05;
+}
+.bg-opacity-30 {
+  --tw-bg-opacity: 0.3;
+}
+.fill-white {
+  fill: #fff;
+}
+.object-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.p-5 {
+  padding: 1.25rem;
+}
+.p-10 {
+  padding: 2.5rem;
+}
+.p-2 {
+  padding: 0.5rem;
+}
+.p-4 {
+  padding: 1rem;
+}
+.p-0 {
+  padding: 0px;
+}
+.p-\[16px\] {
+  padding: 16px;
+}
+.p-2\.5 {
+  padding: 0.625rem;
+}
+.p-\[10px\] {
+  padding: 10px;
+}
+.p-8 {
+  padding: 2rem;
+}
+.p-3 {
+  padding: 0.75rem;
+}
+.p-1 {
+  padding: 0.25rem;
+}
+.p-7 {
+  padding: 1.75rem;
+}
+.p-\[2px\] {
+  padding: 2px;
+}
+.p-\[4px\] {
+  padding: 4px;
+}
+.p-\[6px\] {
+  padding: 6px;
+}
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.py-\[2px\] {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.px-\[20px\] {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.py-\[5px\] {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.px-\[16px\] {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.py-\[8px\] {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.px-\[12px\] {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.py-\[6px\] {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+.px-2\.5 {
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+}
+.px-0 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.px-7 {
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+}
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+.px-\[10px\] {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.py-\[10px\] {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+.py-\[0px\] {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+.py-\[4px\] {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+.py-0 {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+.py-0\.5 {
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+}
+.pt-0 {
+  padding-top: 0px;
+}
+.pl-1 {
+  padding-left: 0.25rem;
+}
+.pb-\[8px\] {
+  padding-bottom: 8px;
+}
+.pb-0 {
+  padding-bottom: 0px;
+}
+.pb-2\.5 {
+  padding-bottom: 0.625rem;
+}
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+.pl-2 {
+  padding-left: 0.5rem;
+}
+.pl-0 {
+  padding-left: 0px;
+}
+.pt-3 {
+  padding-top: 0.75rem;
+}
+.pb-3 {
+  padding-bottom: 0.75rem;
+}
+.pt-1 {
+  padding-top: 0.25rem;
+}
+.pt-2 {
+  padding-top: 0.5rem;
+}
+.pb-5 {
+  padding-bottom: 1.25rem;
+}
+.pb-1 {
+  padding-bottom: 0.25rem;
+}
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.font-sans {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.text-\[14px\] {
+  font-size: 14px;
+}
+.text-\[18px\] {
+  font-size: 18px;
+}
+.text-\[24px\] {
+  font-size: 24px;
+}
+.text-\[20px\] {
+  font-size: 20px;
+}
+.text-\[12px\] {
+  font-size: 12px;
+}
+.text-\[10px\] {
+  font-size: 10px;
+}
+.text-\[16px\] {
+  font-size: 16px;
+}
+.text-\[80px\] {
+  font-size: 80px;
+}
+.text-\[28px\] {
+  font-size: 28px;
+}
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.text-\[40px\] {
+  font-size: 40px;
+}
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.text-\[22px\] {
+  font-size: 22px;
+}
+.text-\[30px\] {
+  font-size: 30px;
+}
+.font-semibold {
+  font-weight: 600;
+}
+.font-medium {
+  font-weight: 500;
+}
+.font-extrabold {
+  font-weight: 800;
+}
+.font-bold {
+  font-weight: 700;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.leading-\[120\%\] {
+  line-height: 120%;
+}
+.leading-\[130\%\] {
+  line-height: 130%;
+}
+.leading-\[150\%\] {
+  line-height: 150%;
+}
+.leading-\[37px\] {
+  line-height: 37px;
+}
+.leading-\[15px\] {
+  line-height: 15px;
+}
+.leading-\[29px\] {
+  line-height: 29px;
+}
+.leading-\[149\.5\%\] {
+  line-height: 149.5%;
+}
+.leading-\[140\%\] {
+  line-height: 140%;
+}
+.leading-none {
+  line-height: 1;
+}
+.tracking-\[0\.06em\] {
+  letter-spacing: 0.06em;
+}
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.text-\[\#83899F\] {
+  --tw-text-opacity: 1;
+  color: rgb(131 137 159 / var(--tw-text-opacity));
+}
+.text-\[\#30395B\] {
+  --tw-text-opacity: 1;
+  color: rgb(48 57 91 / var(--tw-text-opacity));
+}
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+.text-\[\#458E74\] {
+  --tw-text-opacity: 1;
+  color: rgb(69 142 116 / var(--tw-text-opacity));
+}
+.text-\[\#46A382\] {
+  --tw-text-opacity: 1;
+  color: rgb(70 163 130 / var(--tw-text-opacity));
+}
+.text-blue-500 {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+.text-\[\#898B98\] {
+  --tw-text-opacity: 1;
+  color: rgb(137 139 152 / var(--tw-text-opacity));
+}
+.\!text-\[\#898B98\] {
+  --tw-text-opacity: 1 !important;
+  color: rgb(137 139 152 / var(--tw-text-opacity)) !important;
+}
+.text-yellow-600 {
+  --tw-text-opacity: 1;
+  color: rgb(202 138 4 / var(--tw-text-opacity));
+}
+.text-\[\#646778\] {
+  --tw-text-opacity: 1;
+  color: rgb(100 103 120 / var(--tw-text-opacity));
+}
+.text-\[\#fff\] {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.text-\[\#8f8f8f\] {
+  --tw-text-opacity: 1;
+  color: rgb(143 143 143 / var(--tw-text-opacity));
+}
+.text-\[\#E59BFF\] {
+  --tw-text-opacity: 1;
+  color: rgb(229 155 255 / var(--tw-text-opacity));
+}
+.text-\[\#C9C9C9\] {
+  --tw-text-opacity: 1;
+  color: rgb(201 201 201 / var(--tw-text-opacity));
+}
+.text-\[\#4F83FA\] {
+  --tw-text-opacity: 1;
+  color: rgb(79 131 250 / var(--tw-text-opacity));
+}
+.text-\[\#9B9EAF\] {
+  --tw-text-opacity: 1;
+  color: rgb(155 158 175 / var(--tw-text-opacity));
+}
+.text-\[\#E088FF\] {
+  --tw-text-opacity: 1;
+  color: rgb(224 136 255 / var(--tw-text-opacity));
+}
+.text-gray-200 {
+  --tw-text-opacity: 1;
+  color: rgb(229 231 235 / var(--tw-text-opacity));
+}
+.text-\[\#718198\] {
+  --tw-text-opacity: 1;
+  color: rgb(113 129 152 / var(--tw-text-opacity));
+}
+.text-\[\#000\] {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+.text-\[rgba\(0\2c 0\2c 0\2c \.5\)\] {
+  color: rgba(0,0,0,.5);
+}
+.text-\[\#ACB4CF\] {
+  --tw-text-opacity: 1;
+  color: rgb(172 180 207 / var(--tw-text-opacity));
+}
+.text-\[\#ADB6CE\] {
+  --tw-text-opacity: 1;
+  color: rgb(173 182 206 / var(--tw-text-opacity));
+}
+.text-\[\#555\] {
+  --tw-text-opacity: 1;
+  color: rgb(85 85 85 / var(--tw-text-opacity));
+}
+.text-\[\#4E505E\] {
+  --tw-text-opacity: 1;
+  color: rgb(78 80 94 / var(--tw-text-opacity));
+}
+.text-\[\#EAAFFF\] {
+  --tw-text-opacity: 1;
+  color: rgb(234 175 255 / var(--tw-text-opacity));
+}
+.text-\[\#7B7D8B\] {
+  --tw-text-opacity: 1;
+  color: rgb(123 125 139 / var(--tw-text-opacity));
+}
+.text-\[\#6F6F6F\] {
+  --tw-text-opacity: 1;
+  color: rgb(111 111 111 / var(--tw-text-opacity));
+}
+.text-\[\#A3A1A4\] {
+  --tw-text-opacity: 1;
+  color: rgb(163 161 164 / var(--tw-text-opacity));
+}
+.text-\[\#8DA2D2\] {
+  --tw-text-opacity: 1;
+  color: rgb(141 162 210 / var(--tw-text-opacity));
+}
+.text-gray-500 {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+.text-\[\#333\] {
+  --tw-text-opacity: 1;
+  color: rgb(51 51 51 / var(--tw-text-opacity));
+}
+.text-\[\#FF7676\] {
+  --tw-text-opacity: 1;
+  color: rgb(255 118 118 / var(--tw-text-opacity));
+}
+.text-\[\#444\] {
+  --tw-text-opacity: 1;
+  color: rgb(68 68 68 / var(--tw-text-opacity));
+}
+.text-\[\#C5C4E0\] {
+  --tw-text-opacity: 1;
+  color: rgb(197 196 224 / var(--tw-text-opacity));
+}
+.text-\[\#868697\] {
+  --tw-text-opacity: 1;
+  color: rgb(134 134 151 / var(--tw-text-opacity));
+}
+.text-red-400 {
+  --tw-text-opacity: 1;
+  color: rgb(248 113 113 / var(--tw-text-opacity));
+}
+.text-blue-600 {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
+}
+.text-gray-900 {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+.text-\[\#999\] {
+  --tw-text-opacity: 1;
+  color: rgb(153 153 153 / var(--tw-text-opacity));
+}
+.text-opacity-70 {
+  --tw-text-opacity: 0.7;
+}
+.text-opacity-50 {
+  --tw-text-opacity: 0.5;
+}
+.underline {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+.line-through {
+  -webkit-text-decoration-line: line-through;
+          text-decoration-line: line-through;
+}
+.accent-blue-500 {
+  accent-color: #3b82f6;
+}
+.opacity-0 {
+  opacity: 0;
+}
+.shadow {
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shadow-xl {
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shadow-\[0px_10px_28px_-11px_rgba\(0\2c 0\2c 0\2c 0\.35\)\] {
+  --tw-shadow: 0px 10px 28px -11px rgba(0,0,0,0.35);
+  --tw-shadow-colored: 0px 10px 28px -11px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shadow-inner {
+  --tw-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: inset 0 2px 4px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shadow-md {
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shadow-sm {
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.outline-none {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+.blur {
+  --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.transition {
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.ease-linear {
+  transition-timing-function: linear;
+}
+.\[box-shadow\:0px_10px_28px_-11px_rgba\(0\2c _0\2c _0\2c _0\.35\)\] {
+  box-shadow: 0px 10px 28px -11px rgba(0, 0, 0, 0.35);
+}
+
+/* * {
+    font-family: sans-serif;
+    font-weight: medium;
+} */
+
+
+/* Rectangle 208 */
+
+:root {
+	--reach-dialog: 1;
+}
+
+[data-reach-dialog-overlay] {
+	background: hsla(0, 0%, 0%, 0.05);
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow: auto;
+}
+
+[data-reach-dialog-content] {
+	width: 50vw;
+	margin: 10vh auto;
+	background: white;
+	/* padding: 2rem; */
+	outline: none;
+    border-radius: 20px !important;
+    color: #646778;
+}
+
+
+.cardShadow {
+    box-shadow: 0px 0px 10.6929px rgba(0, 0, 0, 0.02), 0px 3.56429px 7.12857px rgba(0, 0, 0, 0.08);
+
+}
+
+.cardShadow2 {
+box-shadow: 0px 10px 28px -11px rgba(0, 0, 0, 0.35);
+}
+
+/* Rectangle 424 */
+
+box-sizing: border-box;
+
+/* position: absolute;
+width: 436px;
+height: 470px;
+left: 1852px;
+top: 329px;
+
+background: #FFFFFF;
+border: 1px solid rgba(0, 0, 0, 0.06);
+box-shadow: 0px 73px 239px rgba(137, 150, 176, 0.08), 0px 11.0205px 106.272px rgba(137, 150, 176, 0.0539815), 0px 4.68369px 73.9095px rgba(137, 150, 176, 0.0377499), 0px 5.17195px 50.157px rgba(137, 150, 176, 0.0248858), 0px 4.17431px 26.0797px rgba(137, 150, 176, 0.0127595);
+border-radius: 32px; */
+
+
+ .otto-modal {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    right: 40px;
+    bottom: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+
+  .otto-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.2);
+  }
+
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  transform: scale(0);
+
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.otto-taskItemdragged{
+    border-radius: 10px;
+    z-index: 100000;
+}
+
+.otto-taskItemdragged button {
+    border-radius: 100%;
+    background-color: #68AEFF;
+    margin-right: 10px;
+}
+
+.otto-taskItemdragged p {
+    color: #646778;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.otto-taskItemdragged span {
+    color: #646778;
+    padding: 6px 12px;
+    background-color: rgba(0, 0, 0, 0.05);
+    font-size: 12px;
+    border-radius: 32px;
+}
+
+
+
+
+
+@-webkit-keyframes ottofadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+
+
+@keyframes ottofadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Apply the animation to an element */
+.otto-fade-in {
+  -webkit-animation: ottofadeIn 2s ease-in-out;
+          animation: ottofadeIn 2s ease-in-out;
+}
+
+.otto-fade-in-button {
+  -webkit-animation: ottofadeIn .1s ease-in-out;
+          animation: ottofadeIn .1s ease-in-out;
+}
+
+
+
+  .otto-SliderRoot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  touch-action: none;
+  width: 100%;
+  height: 20px;
+}
+
+.otto-SliderTrack {
+  background-color: #E7E7E7;
+  position: relative;
+  flex-grow: 1;
+  border-radius: 9999px;
+  height: 6px;
+}
+
+.otto-SliderRange {
+  position: absolute;
+  background-color: #719CFF;
+  border-radius: 9999px;
+  height: 100%;
+}
+
+.otto-SliderThumb {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+.otto-SliderThumb:hover {
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  
+}
+.otto-SliderThumb:focus {
+  outline: none;
+  box-shadow: 0 0 0 5px rgba(0,0,0,0.1);
+}
+.hover\:scale-105:hover {
+  --tw-scale-x: 1.05;
+  --tw-scale-y: 1.05;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.hover\:cursor-pointer:hover {
+  cursor: pointer;
+}
+.hover\:border-\[\#c5c4e0\]:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(197 196 224 / var(--tw-border-opacity));
+}
+.hover\:bg-\[\#E4ECFF\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(228 236 255 / var(--tw-bg-opacity));
+}
+.hover\:bg-\[\#de7fff\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(222 127 255 / var(--tw-bg-opacity));
+}
+.hover\:bg-\[\#FBFBFD\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 251 253 / var(--tw-bg-opacity));
+}
+.hover\:bg-\[\#f9f9f9\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 249 249 / var(--tw-bg-opacity));
+}
+.hover\:bg-\[\#EBEAEA\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(235 234 234 / var(--tw-bg-opacity));
+}
+.hover\:bg-\[\#58A4FF\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(88 164 255 / var(--tw-bg-opacity));
+}
+.hover\:bg-blue-400:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+}
+.hover\:bg-\[\#68AEFF\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(104 174 255 / var(--tw-bg-opacity));
+}
+.hover\:bg-\[\#E59CFF\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 156 255 / var(--tw-bg-opacity));
+}
+.hover\:bg-\[\#6190FD\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(97 144 253 / var(--tw-bg-opacity));
+}
+.hover\:bg-\[\#f5f5f5\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 245 245 / var(--tw-bg-opacity));
+}
+.focus\:border-\[\#c5c4e0\]:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(197 196 224 / var(--tw-border-opacity));
+}
+.focus\:border-blue-500:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(59 130 246 / var(--tw-border-opacity));
+}
+.focus\:bg-\[\#ccc\]:focus {
+  --tw-bg-opacity: 1;
+  background-color: rgb(204 204 204 / var(--tw-bg-opacity));
+}
+.focus\:ring-blue-500:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity));
+}
+.focus-visible\:outline-none:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+.disabled\:bg-gray-400:disabled {
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
+}
+.disabled\:bg-gray-100:disabled {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+.disabled\:bg-\[\#aaa\]:disabled {
+  --tw-bg-opacity: 1;
+  background-color: rgb(170 170 170 / var(--tw-bg-opacity));
+}
+.disabled\:bg-gray-50:disabled {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
+.group:hover .group-hover\:block {
+  display: block;
+}
+.group:hover .group-hover\:hidden {
+  display: none;
+}
+.group:hover .group-hover\:opacity-100 {
+  opacity: 1;
+}
+@media (min-width: 768px) {
+
+  .md\:inset-0 {
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+  }
+}
+</style></template></div>
+
+<script>
+
+  document.addEventListener('DOMContentLoaded', function() {
+    update_clock_and_date();
+  });
+  
+    </script>
+
+    <!--<link rel="stylesheet" href="./srcs/assets/time/blockedPage.css">
+    <script src="./srcs/assets/time/blockedPage.js.download"></script> -->
+    <style>
+        #otto-toastContainer {
+            box-sizing: border-box;
+            display: none;
+            padding: 5px 20px;
+            border-radius: 7px;
+            background-color: #fff;
+            z-index: 10000;
+            position: fixed;
+            top:5%;
+            right: 5%;
+            border: 2px solid rgba(0,0,0,0.3);
+            width: 330px;
+            height: auto;
+            flex-direction: column;
+            justify-items: center;
+            padding: 20px;
+            gap:10px;
+        }
+
+     #otto-containerHolder{
+        display: flex;
+        flex-direction:column;
+    }
+
+#otto-toastCounter {
+  box-sizing: border-box;
+  font-size: 30px;
+  font-weight: bold;
+  color: #000;
+  font-family: sans-serif;
+  margin:0px;
+}
+
+#otto-toastLabel {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: #7d8ba0;
+}
+
+#otto-ProgressContainer {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  background-color: #f4f3f4;
+  border-radius: 30px;
+  height: 30px;
+  overflow: hidden;
+}
+
+#otto-progressBar {
+  box-sizing: border-box;
+  position: absolute;
+  border-radius: 30px;
+  width: 50%;
+  height: 100%;
+  background-color: red;
+}
+
+.otto-card-fade-in {
+ from {
+    transform: scale(0.25);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+}
+
+.otto-card-fade-out{
+ from {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(0.25);
+    opacity: 0;
+  }
+}
+
+    </style>
+
+
+
+   <div id="otto-toastContainer">
+    <span id="otto-toastLabel">This site will be blocked in</span>
+    <p id="otto-toastCounter">00:00</p>
+    <div id="otto-ProgressContainer">
+        <div id="otto-progressBar"></div>
+    </div>
+   </div>
+
+
+</body></html>
