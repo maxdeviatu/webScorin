@@ -294,3 +294,20 @@ For support and questions:
 - Create an issue on GitHub
 - Check the API documentation at `/docs`
 - Review the logs for debugging information 
+
+
+Reinicio rapdio:
+
+pkill -f uvicorn && pkill -f celery
+
+redis-cli flushall
+
+ps aux | grep -E "(uvicorn|celery)" | grep -v grep
+
+source .venv/bin/activate
+
+make dev
+
+curl http://localhost:8000/health
+
+ps aux | grep -E "(uvicorn|celery)" | grep -v grep

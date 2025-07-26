@@ -31,20 +31,88 @@ class SiteCrawler:
         """Main crawling method using Playwright"""
         try:
             async with async_playwright() as p:
-                browser = await p.chromium.launch(headless=True)
+                # Launch browser with improved settings for WSL2
+                browser = await p.chromium.launch(
+                    headless=True,
+                    args=[
+                        '--no-sandbox',
+                        '--disable-dev-shm-usage',
+                        '--disable-gpu',
+                        '--disable-web-security',
+                        '--disable-features=VizDisplayCompositor',
+                        '--disable-background-timer-throttling',
+                        '--disable-backgrounding-occluded-windows',
+                        '--disable-renderer-backgrounding',
+                        '--disable-features=TranslateUI',
+                        '--disable-ipc-flooding-protection',
+                        '--no-first-run',
+                        '--no-default-browser-check',
+                        '--disable-default-apps',
+                        '--disable-extensions',
+                        '--disable-plugins',
+                        '--disable-background-networking',
+                        '--disable-sync',
+                        '--disable-translate',
+                        '--hide-scrollbars',
+                        '--mute-audio',
+                        '--no-zygote',
+                        '--disable-setuid-sandbox',
+                        '--disable-background-media-suspend',
+                        '--disable-component-extensions-with-background-pages',
+                        '--disable-default-apps',
+                        '--disable-domain-reliability',
+                        '--disable-features=AudioServiceOutOfProcess',
+                        '--disable-hang-monitor',
+                        '--disable-prompt-on-repost',
+                        '--disable-renderer-backgrounding',
+                        '--disable-sync-preferences',
+                        '--disable-threaded-animation',
+                        '--disable-threaded-scrolling',
+                        '--disable-web-resources',
+                        '--disable-features=TranslateUI',
+                        '--disable-ipc-flooding-protection',
+                        '--memory-pressure-off',
+                        '--max_old_space_size=4096'
+                    ]
+                )
+                
                 page = await browser.new_page()
                 
                 # Set viewport for consistent screenshots
                 await page.set_viewport_size({"width": 1920, "height": 1080})
                 
-                # Navigate to the main page
-                await page.goto(url, wait_until="networkidle")
+                # Set longer timeout and more lenient wait conditions
+                page.set_default_timeout(60000)  # 60 seconds timeout
+                page.set_default_navigation_timeout(60000)
+                
+                # Navigate to the main page with retry logic
+                success = False
+                for attempt in range(3):
+                    try:
+                        await page.goto(url, wait_until="domcontentloaded", timeout=60000)
+                        success = True
+                        break
+                    except Exception as e:
+                        if attempt == 2:  # Last attempt
+                            raise e
+                        await asyncio.sleep(2)  # Wait before retry
+                
+                if not success:
+                    raise Exception(f"Failed to navigate to {url} after 3 attempts")
                 
                 # Take screenshot if requested
                 if self.include_screenshots:
                     self.screenshot_path = f"screenshots/{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
                     os.makedirs("screenshots", exist_ok=True)
                     await page.screenshot(path=self.screenshot_path, full_page=True)
+                
+                # Store HTML content of main page if requested
+                if self.include_html:
+                    try:
+                        html = await page.content()
+                        self.html_content[url] = html
+                    except Exception as e:
+                        print(f"Error getting HTML content for main page: {e}")
                 
                 # Get all links from the page
                 links = await self._extract_links(page, url)
@@ -92,32 +160,70 @@ class SiteCrawler:
             if len(self.crawled_urls) >= self.max_pages:
                 break
                 
+            new_page = None
             try:
-                new_page = await browser.new_page()
-                await new_page.goto(link, wait_until="networkidle", timeout=10000)
+                # Check if browser is still open
+                try:
+                    new_page = await browser.new_page()
+                except Exception as e:
+                    print(f"Browser closed, cannot create new page for {link}: {e}")
+                    break
+                
+                # Set timeouts for this page
+                new_page.set_default_timeout(20000)  # Reduced timeout
+                new_page.set_default_navigation_timeout(20000)
+                
+                # Try to navigate with retry logic
+                success = False
+                for attempt in range(2):  # 2 attempts for internal pages
+                    try:
+                        await new_page.goto(link, wait_until="domcontentloaded", timeout=20000)
+                        success = True
+                        break
+                    except Exception as e:
+                        if attempt == 1:  # Last attempt
+                            raise e
+                        await asyncio.sleep(1)  # Wait before retry
+                
+                if not success:
+                    print(f"Failed to navigate to {link} after 2 attempts")
+                    if new_page:
+                        await new_page.close()
+                    continue
                 
                 # Store HTML content if requested
                 if self.include_html:
-                    html = await new_page.content()
-                    self.html_content[link] = html
+                    try:
+                        html = await new_page.content()
+                        self.html_content[link] = html
+                    except Exception as e:
+                        print(f"Error getting HTML content for {link}: {e}")
                 
                 # Extract more links
-                new_links = await self._extract_links(new_page, base_url)
-                self.all_links.update(new_links)
-                
-                # Update link categorization
-                for new_link in new_links:
-                    if tldextract.extract(new_link).registered_domain == base_domain:
-                        self.internal_links.add(new_link)
-                    else:
-                        self.external_links.add(new_link)
+                try:
+                    new_links = await self._extract_links(new_page, base_url)
+                    self.all_links.update(new_links)
+                    
+                    # Update link categorization
+                    for new_link in new_links:
+                        if tldextract.extract(new_link).registered_domain == base_domain:
+                            self.internal_links.add(new_link)
+                        else:
+                            self.external_links.add(new_link)
+                except Exception as e:
+                    print(f"Error extracting links from {link}: {e}")
                 
                 self.crawled_urls.add(link)
-                await new_page.close()
                 
             except Exception as e:
                 print(f"Error crawling {link}: {e}")
-                continue
+            finally:
+                # Always close the page
+                if new_page:
+                    try:
+                        await new_page.close()
+                    except Exception as e:
+                        print(f"Error closing page for {link}: {e}")
     
     def _compile_results(self, url: str) -> Dict[str, Any]:
         """Compile crawling results"""
